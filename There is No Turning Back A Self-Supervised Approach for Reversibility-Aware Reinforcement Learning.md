@@ -33,6 +33,7 @@ That's better, but would still mean sampling all possible trajectories after act
 $$
 \psi_{\pi,T}\left(s,s^{\prime}\right)=\mathbb{E}_{\tau\sim\pi}{{\mathbb{E}_{s_{t}=s,s_{t^{\prime}}=s^{\prime}}}_{t,t^{\prime}<T}}\left[\mathbb{1}_{t^{\prime}>t}\right]
 $$
+
 <div style="text-align:center">[1, p.4]</div>
 
 Read: "For two states *s* and *s'* from a trajectory *τ* with length *T* in a given policy *π* at the timesteps *t* and *t'*, which timestep is greater?" Precedence will therefore be 1 if state *s* always comes first, and 0 if state *s* never comes first. Using this, we can ask: How likely is it that state *s'* comes before state *s*, when *s'* is a result of taking action *a* in state *s*? If it is 1, the transition from state *s* to state *s'* must be reversible. This is called *empirical reversibility*:
@@ -307,5 +308,6 @@ I could imagine human perception being able to create a representation of a pres
 [3] OpenAI. Frozen Lake[Website]. 2022. Available at: https://www.gymlibrary.dev/environments/toy_text/frozen_lake/
 
 ## Images
+
 
 [4] https://towardsdatascience.com/deep-learning-a-monty-hall-strategy-or-a-gentle-introduction-to-deep-q-learning-and-openai-gym-d66918ac5b26
