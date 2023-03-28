@@ -31,7 +31,7 @@ $$
 That's better, but would still mean sampling all possible trajectories after action *a* in state *s*. Probably not feasible. We are still not working with our initial statement though. Remember? *Reversibility means a transition between both states is equally likely*. There therefore exist a much simpler question: *Could the result have been before?* In the paper, this concept is called *precedence*, and they define it like so:
 
 $$
-\psi_{\pi,T}\left(s,s^{\prime}\right)=\mathbb{E}_{\tau\sim\pi}{{\mathbb{E}_{s_{t}=s,s_{t^{\prime}}=s^{\prime}}}_{t,t^{\prime}<T}^{}}\left[\mathbb{1}_{t^{\prime}>t}\right]
+\psi_{\pi,T}\left(s,s^{\prime}\right)=\mathbb{E}_{\tau\sim\pi}{{\mathbb{E}_{s_{t}=s,s_{t^{\prime}}=s^{\prime}}}_{t,t^{\prime}<T}}\left[\mathbb{1}_{t^{\prime}>t}\right]
 $$
 <div style="text-align:center">[1, p.4]</div>
 
