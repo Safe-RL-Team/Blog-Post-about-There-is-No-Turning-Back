@@ -18,9 +18,8 @@ $$
 $$
 <div style="text-align:center">[1, p.3]</div>
 That's better, but would still mean sampling all possible trajectories after action *a* in state *s*. Probably not feasible. We are still not working with our initial statement though. Remember? *Reversibility means a transition between both states is equally likely*. There therefore exist a much simpler question: *Could the result have been before?* In the paper, this concept is called *precedence*, and they define it like so:
-$$
-\psi_{\pi,T}\left(s,s^{\prime}\right)=\mathbb{E}_{\tau\sim\pi}{{\mathbb{E}_{s_{t}=s,s_{t^{\prime}}=s^{\prime}}}_{t,t^{\prime}<T}}\left[\mathbb{1}_{t^{\prime}>t}\right]
-$$
+
+
 <div style="text-align:center">[1, p.4]</div>
 Read: "For two states *s* and *s'* from a trajectory *τ* with length *T* in a given policy *π* at the timesteps *t* and *t'*, which timestep is greater?" Precedence will therefore be 1 if state *s* always comes first, and 0 if state *s* never comes first. Using this, we can ask: How likely is it that state *s'* comes before state *s*, when *s'* is a result of taking action *a* in state *s*? If it is 1, the transition from state *s* to state *s'* must be reversible. This is called *empirical reversibility*:
 $$
