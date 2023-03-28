@@ -1,0 +1,914 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji', Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  font-size: 1.5rem;
+ 	top: -0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+li {
+	margin: 0.5rem 0;
+}
+
+li > *:last-child {
+	margin-bottom: 0;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>There is No Turning Back A Self-Supervised Approach for Reversibility-Aware Reinforcement Learning</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='there-is-no-turning-back-a-self-supervised-approach-for-reversibility-aware-reinforcement-learning'><span>There is No Turning Back: A Self-Supervised Approach for Reversibility-Aware Reinforcement Learning</span></h1><h2 id='introduction'><span>Introduction</span></h2><p><span>Making reinforcement learning safer has two benefits, namely lower-risk exploration (mostly relevant in real-world tasks), and more efficient learning. As the agent spends more time in safe states, it will more likely reach states with positive rewards and find a optimal solution. There are many ways to tackle this problem of safety, with the &quot;</span><em><span>There is No Turning Back</span></em><span>&quot;-paper by Nathan et. al. [1], published at the </span><em><span>NeurIPS 2021</span></em><span> taking a very interesting approach. There assumption is simply this: </span><em><span>If something is reversible, it must be safe, since the agent can always return to where it was safe.</span></em><span> The authors further find some very interesting ways to implement this assumption in reinforcement learning. They successfully proof, that reversibility does indeed hold information about the environment, and that this information can be leveraged to create safer and more efficient learning and exploration.</span></p><h2 id='method'><span>Method</span></h2><p><span>Reversibility is difficult. Still, we understand it intuitively. I lift my tea cup: </span><em><span>reversible</span></em><span>. I throw the same cup out of the window: </span><em><span>not reversible</span></em><span>. But why? Surely the cup could be fixed. Just that its super complicated and no one would bother. And that&#39;s the thing: Super complicated, no one would bother. </span></p><p><span>Reversibility then means getting back to the start is about as simple as getting to the result. In other words, start and result are interchangeable. Or in mathematical terms: </span><em><span>Reversibility means a transition between both states is equally likely</span></em><span>. And if that likelihood can be predicated, we have a functional reversibility estimator. This is the basis of the paper, which they go on defining mathematically.</span></p><p><img src="https://lh6.googleusercontent.com/ALom2QZzfWryfdVtJUS_veUF2-LtvMVJJZKq8BRD_qYQ1fnaYeKEmLWT4NT-eKxHlP_tH85em4M3Lv7rvdr2DRj7QqMe8F-2Nyvr-kr4SH49S4rlb6f8fk_ZVCVmLHFSrYAzmLeCOHnNkuCZIlP0Oa2ehg=s2048" alt="img" style="zoom:50%;" /></p><div style="text-align:center">[1, p.2]</div><h3 id='mathematical-reversibility-and-reversibility-estimation'><span>Mathematical Reversibility and Reversibility Estimation</span></h3><p><span>Finding a mathematical expression for reversibility is surprisingly simple (At least if we leave out a few proofs along the way...). What we want to show is this: Starting at state </span><em><span>s</span></em><span> and performing action </span><em><span>a</span></em><span>, how likely is it, that we will eventually return to state </span><em><span>s</span></em><span>? We call this </span><em><span>reversibility</span></em><span>, and can define it like so:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n11" cid="n11" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="40.513ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 17906.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-1-TEX-I-1D719" d="M409 688Q413 694 421 694H429H442Q448 688 448 686Q448 679 418 563Q411 535 404 504T392 458L388 442Q388 441 397 441T429 435T477 418Q521 397 550 357T579 260T548 151T471 65T374 11T279 -10H275L251 -105Q245 -128 238 -160Q230 -192 227 -198T215 -205H209Q189 -205 189 -198Q189 -193 211 -103L234 -11Q234 -10 226 -10Q221 -10 206 -8T161 6T107 36T62 89T43 171Q43 231 76 284T157 370T254 422T342 441Q347 441 348 445L378 567Q409 686 409 688ZM122 150Q122 116 134 91T167 53T203 35T237 27H244L337 404Q333 404 326 403T297 395T255 379T211 350T170 304Q152 276 137 237Q122 191 122 150ZM500 282Q500 320 484 347T444 385T405 400T381 404H378L332 217L284 29Q284 27 285 27Q293 27 317 33T357 47Q400 66 431 100T475 170T494 234T500 282Z"></path><path id="MJX-1-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-1-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-1-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-1-TEX-N-3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-1-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-1-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-1-TEX-N-2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path><path id="MJX-1-TEX-I-1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path><path id="MJX-1-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-1-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-1-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-1-TEX-N-221E" d="M55 217Q55 305 111 373T254 442Q342 442 419 381Q457 350 493 303L507 284L514 294Q618 442 747 442Q833 442 888 374T944 214Q944 128 889 59T743 -11Q657 -11 580 50Q542 81 506 128L492 147L485 137Q381 -11 252 -11Q166 -11 111 57T55 217ZM907 217Q907 285 869 341T761 397Q740 397 720 392T682 378T648 359T619 335T594 310T574 285T559 263T548 246L543 238L574 198Q605 158 622 138T664 94T714 61T765 51Q827 51 867 100T907 217ZM92 214Q92 145 131 89T239 33Q357 33 456 193L425 233Q364 312 334 337Q285 380 233 380Q171 380 132 331T92 214Z"></path><path id="MJX-1-TEX-N-2223" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D719" xlink:href="#MJX-1-TEX-I-1D719"></use></g><g data-mml-node="mi" transform="translate(629,-150) scale(0.707)"><use data-c="1D70B" xlink:href="#MJX-1-TEX-I-1D70B"></use></g></g><g data-mml-node="mrow" transform="translate(1248.7,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-1-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-1-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1302.7,0)"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1831.7,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g><g data-mml-node="mo" transform="translate(3747.2,0)"><g data-mml-node="text"><use data-c="3A" xlink:href="#MJX-1-TEX-N-3A"></use></g><g data-mml-node="text" transform="translate(278,0)"><use data-c="3D" xlink:href="#MJX-1-TEX-N-3D"></use></g></g><g data-mml-node="msub" transform="translate(5080.9,0)"><g data-mml-node="mi"><use data-c="1D45D" xlink:href="#MJX-1-TEX-I-1D45D"></use></g><g data-mml-node="TeXAtom" transform="translate(536,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-1-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(6236.7,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-1-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(1135.8,0)"><use data-c="2208" xlink:href="#MJX-1-TEX-N-2208"></use></g><g data-mml-node="msub" transform="translate(2080.6,0)"><g data-mml-node="mi"><use data-c="1D70F" xlink:href="#MJX-1-TEX-I-1D70F"></use></g><g data-mml-node="TeXAtom" transform="translate(470,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-1-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(361,0)"><use data-c="2B" xlink:href="#MJX-1-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(1139,0)"><use data-c="31" xlink:href="#MJX-1-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(1639,0)"><use data-c="3A" xlink:href="#MJX-1-TEX-N-3A"></use></g><g data-mml-node="mi" transform="translate(1917,0)"><use data-c="221E" xlink:href="#MJX-1-TEX-N-221E"></use></g></g></g><g data-mml-node="mo" transform="translate(4941,0)"><use data-c="2223" xlink:href="#MJX-1-TEX-N-2223"></use></g><g data-mml-node="msub" transform="translate(5496.7,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-1-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-1-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(6581.8,0)"><use data-c="3D" xlink:href="#MJX-1-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(7637.6,0)"><use data-c="1D460" xlink:href="#MJX-1-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(8106.6,0)"><use data-c="2C" xlink:href="#MJX-1-TEX-N-2C"></use></g><g data-mml-node="msub" transform="translate(8551.2,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-1-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(9696.3,0)"><use data-c="3D" xlink:href="#MJX-1-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(10752.1,0)"><use data-c="1D44E" xlink:href="#MJX-1-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(11281.1,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>ϕ</mi><mi>π</mi></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>:=</mo><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>∈</mo><msub><mi>τ</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mo>+</mo><mn>1</mn><mo>:</mo><mi mathvariant="normal">∞</mi></mrow></msub><mo>∣</mo><msub><mi>s</mi><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></msub><mo>=</mo><mi>s</mi><mo>,</mo><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></msub><mo>=</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></div></div><div style="text-align:center">[1, p.3]</div><p><span>Infinity is luckily not necessary for interaction with most environment, so let&#39;s instead reduce that to </span><em><span>K</span></em><span> steps:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n14" cid="n14" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="46.069ex" height="2.347ex" role="img" focusable="false" viewBox="0 -750 20362.5 1037.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.65ex;"><defs><path id="MJX-2-TEX-I-1D719" d="M409 688Q413 694 421 694H429H442Q448 688 448 686Q448 679 418 563Q411 535 404 504T392 458L388 442Q388 441 397 441T429 435T477 418Q521 397 550 357T579 260T548 151T471 65T374 11T279 -10H275L251 -105Q245 -128 238 -160Q230 -192 227 -198T215 -205H209Q189 -205 189 -198Q189 -193 211 -103L234 -11Q234 -10 226 -10Q221 -10 206 -8T161 6T107 36T62 89T43 171Q43 231 76 284T157 370T254 422T342 441Q347 441 348 445L378 567Q409 686 409 688ZM122 150Q122 116 134 91T167 53T203 35T237 27H244L337 404Q333 404 326 403T297 395T255 379T211 350T170 304Q152 276 137 237Q122 191 122 150ZM500 282Q500 320 484 347T444 385T405 400T381 404H378L332 217L284 29Q284 27 285 27Q293 27 317 33T357 47Q400 66 431 100T475 170T494 234T500 282Z"></path><path id="MJX-2-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-2-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-2-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-2-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-2-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-2-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-2-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-2-TEX-N-3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-2-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-2-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-2-TEX-N-2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path><path id="MJX-2-TEX-I-1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path><path id="MJX-2-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-2-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-2-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-2-TEX-N-2223" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D719" xlink:href="#MJX-2-TEX-I-1D719"></use></g><g data-mml-node="TeXAtom" transform="translate(629,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-2-TEX-I-1D70B"></use></g><g data-mml-node="mo" transform="translate(570,0)"><use data-c="2C" xlink:href="#MJX-2-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(848,0)"><use data-c="1D43E" xlink:href="#MJX-2-TEX-I-1D43E"></use></g></g></g><g data-mml-node="mrow" transform="translate(2073.9,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-2-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-2-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-2-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1302.7,0)"><use data-c="1D44E" xlink:href="#MJX-2-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1831.7,0)"><use data-c="29" xlink:href="#MJX-2-TEX-N-29"></use></g></g><g data-mml-node="mo" transform="translate(4572.4,0)"><g data-mml-node="text"><use data-c="3A" xlink:href="#MJX-2-TEX-N-3A"></use></g><g data-mml-node="text" transform="translate(278,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g></g><g data-mml-node="msub" transform="translate(5906.1,0)"><g data-mml-node="mi"><use data-c="1D45D" xlink:href="#MJX-2-TEX-I-1D45D"></use></g><g data-mml-node="TeXAtom" transform="translate(536,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-2-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(7061.9,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-2-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-2-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(1135.8,0)"><use data-c="2208" xlink:href="#MJX-2-TEX-N-2208"></use></g><g data-mml-node="msub" transform="translate(2080.6,0)"><g data-mml-node="mi"><use data-c="1D70F" xlink:href="#MJX-2-TEX-I-1D70F"></use></g><g data-mml-node="TeXAtom" transform="translate(470,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-2-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(361,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(1139,0)"><use data-c="31" xlink:href="#MJX-2-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(1639,0)"><use data-c="3A" xlink:href="#MJX-2-TEX-N-3A"></use></g><g data-mml-node="mi" transform="translate(1917,0)"><use data-c="1D461" xlink:href="#MJX-2-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(2278,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="mi" transform="translate(3056,0)"><use data-c="1D43E" xlink:href="#MJX-2-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(3945,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(4723,0)"><use data-c="31" xlink:href="#MJX-2-TEX-N-31"></use></g></g></g><g data-mml-node="mo" transform="translate(6571.6,0)"><use data-c="2223" xlink:href="#MJX-2-TEX-N-2223"></use></g><g data-mml-node="msub" transform="translate(7127.3,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-2-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-2-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(8212.4,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(9268.2,0)"><use data-c="1D460" xlink:href="#MJX-2-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(9737.2,0)"><use data-c="2C" xlink:href="#MJX-2-TEX-N-2C"></use></g><g data-mml-node="msub" transform="translate(10181.8,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-2-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-2-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(11326.9,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(12382.6,0)"><use data-c="1D44E" xlink:href="#MJX-2-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(12911.6,0)"><use data-c="29" xlink:href="#MJX-2-TEX-N-29"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>ϕ</mi><mrow data-mjx-texclass="ORD"><mi>π</mi><mo>,</mo><mi>K</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>:=</mo><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>∈</mo><msub><mi>τ</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mo>+</mo><mn>1</mn><mo>:</mo><mi>t</mi><mo>+</mo><mi>K</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∣</mo><msub><mi>s</mi><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></msub><mo>=</mo><mi>s</mi><mo>,</mo><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></msub><mo>=</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></div></div><div style="text-align:center">[1, p.3]</div><p><span>That&#39;s better, but would still mean sampling all possible trajectories after action </span><em><span>a</span></em><span> in state </span><em><span>s</span></em><span>. Probably not feasible. We are still not working with our initial statement though. Remember? </span><em><span>Reversibility means a transition between both states is equally likely</span></em><span>. There therefore exist a much simpler question: </span><em><span>Could the result have been before?</span></em><span> In the paper, this concept is called </span><em><span>precedence</span></em><span>, and they define it like so:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n17" cid="n17" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="37.712ex" height="3.059ex" role="img" focusable="false" viewBox="0 -849.5 16668.7 1352" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.137ex;"><defs><path id="MJX-3-TEX-I-1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path><path id="MJX-3-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-3-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-3-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-3-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"></path><path id="MJX-3-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-3-TEX-V-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path><path id="MJX-3-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"></path><path id="MJX-3-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-3-TEX-D-1D53C" d="M12 666Q12 675 24 683H582Q590 680 593 672V588Q593 514 591 502T575 490Q567 490 563 495T555 517Q552 556 517 590Q486 623 445 634T340 648H282Q266 636 264 620T260 492V370H277Q329 375 358 391T404 439Q420 480 420 506Q420 529 436 529Q445 529 451 521Q455 517 455 361Q455 333 455 298T456 253Q456 217 453 207T437 197Q420 196 420 217Q420 240 406 270Q377 328 284 335H260V201Q261 174 261 134Q262 73 264 61T278 38Q281 36 282 35H331Q400 35 449 50Q571 93 602 179Q605 203 622 203Q629 203 634 197T640 183Q638 181 624 95T604 3L600 -1H24Q12 5 12 16Q12 35 51 35Q92 38 97 52Q102 60 102 341T97 632Q91 645 51 648Q12 648 12 666ZM137 341Q137 131 136 89T130 37Q129 36 129 35H235Q233 41 231 48L226 61V623L231 635L235 648H129Q132 641 133 638T135 603T137 517T137 341ZM557 603V648H504Q504 646 515 639Q527 634 542 619L557 603ZM420 317V397L406 383Q394 370 380 363L366 355Q373 350 382 346Q400 333 409 328L420 317ZM582 61L586 88Q585 88 582 83Q557 61 526 46L511 37L542 35H577Q577 36 578 39T580 49T582 61Z"></path><path id="MJX-3-TEX-I-1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path><path id="MJX-3-TEX-N-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path id="MJX-3-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-3-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path><path id="MJX-3-TEX-N-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path id="MJX-3-TEX-N-3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path><path id="MJX-3-TEX-N-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D713" xlink:href="#MJX-3-TEX-I-1D713"></use></g><g data-mml-node="TeXAtom" transform="translate(684,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-3-TEX-I-1D70B"></use></g><g data-mml-node="mo" transform="translate(570,0)"><use data-c="2C" xlink:href="#MJX-3-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(848,0)"><use data-c="1D447" xlink:href="#MJX-3-TEX-I-1D447"></use></g></g></g><g data-mml-node="mrow" transform="translate(1998.1,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-3-TEX-SO-28"></use></g><g data-mml-node="mi" transform="translate(458,0)"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(927,0)"><use data-c="2C" xlink:href="#MJX-3-TEX-N-2C"></use></g><g data-mml-node="msup" transform="translate(1371.7,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-3-TEX-V-2032"></use></g></g></g><g data-mml-node="mo" transform="translate(2118.1,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-3-TEX-SO-29"></use></g></g><g data-mml-node="mo" transform="translate(4852,0)"><use data-c="3D" xlink:href="#MJX-3-TEX-N-3D"></use></g><g data-mml-node="msub" transform="translate(5907.8,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D53C" xlink:href="#MJX-3-TEX-D-1D53C"></use></g></g><g data-mml-node="TeXAtom" transform="translate(700,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70F" xlink:href="#MJX-3-TEX-I-1D70F"></use></g><g data-mml-node="mo" transform="translate(517,0)"><use data-c="223C" xlink:href="#MJX-3-TEX-N-223C"></use></g><g data-mml-node="mi" transform="translate(1295,0)"><use data-c="1D70B" xlink:href="#MJX-3-TEX-I-1D70B"></use></g></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(7976.5,0)"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D53C" xlink:href="#MJX-3-TEX-D-1D53C"></use></g></g><g data-mml-node="TeXAtom" transform="translate(700,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(807.3,0)"><use data-c="3D" xlink:href="#MJX-3-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(1585.3,0)"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(2054.3,0)"><use data-c="2C" xlink:href="#MJX-3-TEX-N-2C"></use></g><g data-mml-node="msub" transform="translate(2332.3,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,-246.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(394,289)"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-3-TEX-V-2032"></use></g></g></g></g></g><g data-mml-node="mo" transform="translate(3392.7,0)"><use data-c="3D" xlink:href="#MJX-3-TEX-N-3D"></use></g><g data-mml-node="msup" transform="translate(4170.7,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-3-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-3-TEX-V-2032"></use></g></g></g></g></g></g><g data-mml-node="TeXAtom" transform="translate(4259.9,-365.3) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(361,0)"><use data-c="2C" xlink:href="#MJX-3-TEX-N-2C"></use></g><g data-mml-node="msup" transform="translate(639,0)"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g><g data-mml-node="TeXAtom" transform="translate(394,289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-3-TEX-V-2032"></use></g></g></g><g data-mml-node="mo" transform="translate(1277.5,0)"><use data-c="3C" xlink:href="#MJX-3-TEX-N-3C"></use></g><g data-mml-node="mi" transform="translate(2055.5,0)"><use data-c="1D447" xlink:href="#MJX-3-TEX-I-1D447"></use></g></g></g></g><g data-mml-node="mrow" transform="translate(14404.4,0)"><g data-mml-node="mo"><use data-c="5B" xlink:href="#MJX-3-TEX-N-5B"></use></g><g data-mml-node="msub" transform="translate(278,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mn"><text data-variant="double-struck" transform="scale(1,-1)" font-size="796.1px">𝟙</text></g></g><g data-mml-node="TeXAtom" transform="translate(401.5,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g><g data-mml-node="TeXAtom" transform="translate(394,289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-3-TEX-V-2032"></use></g></g></g><g data-mml-node="mo" transform="translate(638.5,0)"><use data-c="3E" xlink:href="#MJX-3-TEX-N-3E"></use></g><g data-mml-node="mi" transform="translate(1416.5,0)"><use data-c="1D461" xlink:href="#MJX-3-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(1986.3,0)"><use data-c="5D" xlink:href="#MJX-3-TEX-N-5D"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>ψ</mi><mrow data-mjx-texclass="ORD"><mi>π</mi><mo>,</mo><mi>T</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><msup><mi>s</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">E</mi></mrow><mrow data-mjx-texclass="ORD"><mi>τ</mi><mo>∼</mo><mi>π</mi></mrow></msub><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">E</mi></mrow><mrow data-mjx-texclass="ORD"><msub><mi>s</mi><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></msub><mo>=</mo><mi>s</mi><mo>,</mo><msub><mi>s</mi><mrow data-mjx-texclass="ORD"><msup><mi>t</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup></mrow></msub><mo>=</mo><msup><mi>s</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup></mrow></msub></mrow><mrow data-mjx-texclass="ORD"><mi>t</mi><mo>,</mo><msup><mi>t</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup><mo>&lt;</mo><mi>T</mi></mrow></msub></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><msub><mrow data-mjx-texclass="ORD"><mn mathvariant="double-struck">1</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>t</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup><mo>&gt;</mo><mi>t</mi></mrow></msub><mo data-mjx-texclass="CLOSE">]</mo></mrow></math></mjx-assistive-mml></mjx-container></div></div><div style="text-align:center">[1, p.4]</div><p><span>Read: &quot;For two states </span><em><span>s</span></em><span> and </span><em><span>s&#39;</span></em><span> from a trajectory </span><em><span>τ</span></em><span> with length </span><em><span>T</span></em><span> in a given policy </span><em><span>π</span></em><span> at the timesteps </span><em><span>t</span></em><span> and </span><em><span>t&#39;</span></em><span>, which timestep is greater?&quot; Precedence will therefore be 1 if state </span><em><span>s</span></em><span> always comes first, and 0 if state </span><em><span>s</span></em><span> never comes first. Using this, we can ask: How likely is it that state </span><em><span>s&#39;</span></em><span> comes before state </span><em><span>s</span></em><span>, when </span><em><span>s&#39;</span></em><span> is a result of taking action </span><em><span>a</span></em><span> in state </span><em><span>s</span></em><span>? If it is 1, the transition from state </span><em><span>s</span></em><span> to state </span><em><span>s&#39;</span></em><span> must be reversible. This is called </span><em><span>empirical reversibility</span></em><span>:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n20" cid="n20" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="30.531ex" height="3.087ex" role="img" focusable="false" viewBox="0 -1011 13494.8 1364.5" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.8ex;"><defs><path id="MJX-4-TEX-I-1D719" d="M409 688Q413 694 421 694H429H442Q448 688 448 686Q448 679 418 563Q411 535 404 504T392 458L388 442Q388 441 397 441T429 435T477 418Q521 397 550 357T579 260T548 151T471 65T374 11T279 -10H275L251 -105Q245 -128 238 -160Q230 -192 227 -198T215 -205H209Q189 -205 189 -198Q189 -193 211 -103L234 -11Q234 -10 226 -10Q221 -10 206 -8T161 6T107 36T62 89T43 171Q43 231 76 284T157 370T254 422T342 441Q347 441 348 445L378 567Q409 686 409 688ZM122 150Q122 116 134 91T167 53T203 35T237 27H244L337 404Q333 404 326 403T297 395T255 379T211 350T170 304Q152 276 137 237Q122 191 122 150ZM500 282Q500 320 484 347T444 385T405 400T381 404H378L332 217L284 29Q284 27 285 27Q293 27 317 33T357 47Q400 66 431 100T475 170T494 234T500 282Z"></path><path id="MJX-4-TEX-S4-2013" d="M0 248V285H499V248H0Z"></path><path id="MJX-4-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-4-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-4-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-4-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-4-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-4-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-4-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-4-TEX-D-1D53C" d="M12 666Q12 675 24 683H582Q590 680 593 672V588Q593 514 591 502T575 490Q567 490 563 495T555 517Q552 556 517 590Q486 623 445 634T340 648H282Q266 636 264 620T260 492V370H277Q329 375 358 391T404 439Q420 480 420 506Q420 529 436 529Q445 529 451 521Q455 517 455 361Q455 333 455 298T456 253Q456 217 453 207T437 197Q420 196 420 217Q420 240 406 270Q377 328 284 335H260V201Q261 174 261 134Q262 73 264 61T278 38Q281 36 282 35H331Q400 35 449 50Q571 93 602 179Q605 203 622 203Q629 203 634 197T640 183Q638 181 624 95T604 3L600 -1H24Q12 5 12 16Q12 35 51 35Q92 38 97 52Q102 60 102 341T97 632Q91 645 51 648Q12 648 12 666ZM137 341Q137 131 136 89T130 37Q129 36 129 35H235Q233 41 231 48L226 61V623L231 635L235 648H129Q132 641 133 638T135 603T137 517T137 341ZM557 603V648H504Q504 646 515 639Q527 634 542 619L557 603ZM420 317V397L406 383Q394 370 380 363L366 355Q373 350 382 346Q400 333 409 328L420 317ZM582 61L586 88Q585 88 582 83Q557 61 526 46L511 37L542 35H577Q577 36 578 39T580 49T582 61Z"></path><path id="MJX-4-TEX-V-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path><path id="MJX-4-TEX-N-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path id="MJX-4-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path id="MJX-4-TEX-SO-5B" d="M202 -349V850H394V810H242V-309H394V-349H202Z"></path><path id="MJX-4-TEX-I-1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path><path id="MJX-4-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"></path><path id="MJX-4-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"></path><path id="MJX-4-TEX-SO-5D" d="M22 810V850H214V-349H22V-309H174V810H22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D719" xlink:href="#MJX-4-TEX-I-1D719"></use></g><g data-mml-node="mo" transform="translate(0,626)"><svg width="596" height="237" x="0" y="148" viewBox="149 148 596 237"><use data-c="2013" xlink:href="#MJX-4-TEX-S4-2013" transform="scale(1.788,1)"></use></svg></g></g><g data-mml-node="TeXAtom" transform="translate(629,-240.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-4-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(1248.7,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-4-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-4-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-4-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1302.7,0)"><use data-c="1D44E" xlink:href="#MJX-4-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1831.7,0)"><use data-c="29" xlink:href="#MJX-4-TEX-N-29"></use></g></g><g data-mml-node="mo" transform="translate(3747.2,0)"><use data-c="3D" xlink:href="#MJX-4-TEX-N-3D"></use></g><g data-mml-node="msub" transform="translate(4802.9,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D53C" xlink:href="#MJX-4-TEX-D-1D53C"></use></g></g><g data-mml-node="TeXAtom" transform="translate(700,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-4-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-4-TEX-V-2032"></use></g></g></g><g data-mml-node="mo" transform="translate(746.5,0)"><use data-c="223C" xlink:href="#MJX-4-TEX-N-223C"></use></g><g data-mml-node="mi" transform="translate(1524.5,0)"><use data-c="1D443" xlink:href="#MJX-4-TEX-I-1D443"></use></g><g data-mml-node="mrow" transform="translate(2275.5,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-4-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-4-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-4-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1136,0)"><use data-c="1D44E" xlink:href="#MJX-4-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1665,0)"><use data-c="29" xlink:href="#MJX-4-TEX-N-29"></use></g></g></g></g><g data-mml-node="mrow" transform="translate(8781,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="5B" xlink:href="#MJX-4-TEX-SO-5B"></use></g><g data-mml-node="msub" transform="translate(417,0)"><g data-mml-node="mi"><use data-c="1D713" xlink:href="#MJX-4-TEX-I-1D713"></use></g><g data-mml-node="TeXAtom" transform="translate(684,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-4-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(1720.7,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-4-TEX-SO-28"></use></g><g data-mml-node="msup" transform="translate(458,0)"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-4-TEX-I-1D460"></use></g><g data-mml-node="TeXAtom" transform="translate(502,413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="2032" xlink:href="#MJX-4-TEX-V-2032"></use></g></g></g><g data-mml-node="mo" transform="translate(1204.5,0)"><use data-c="2C" xlink:href="#MJX-4-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1649.1,0)"><use data-c="1D460" xlink:href="#MJX-4-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(2118.1,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-4-TEX-SO-29"></use></g></g><g data-mml-node="mo" transform="translate(4296.8,0) translate(0 -0.5)"><use data-c="5D" xlink:href="#MJX-4-TEX-SO-5D"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mover><mi>ϕ</mi><mo accent="true">―</mo></mover><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">E</mi></mrow><mrow data-mjx-texclass="ORD"><msup><mi>s</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup><mo>∼</mo><mi>P</mi><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><msub><mi>ψ</mi><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msup><mi>s</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-alternate="1">′</mi></mrow></msup><mo>,</mo><mi>s</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo data-mjx-texclass="CLOSE">]</mo></mrow></math></mjx-assistive-mml></mjx-container></div></div><div style="text-align:center">[1, p.4]</div><p><span>Finally, we can connect the </span><em><span>reversibility</span></em><span> and the </span><em><span>empirical reversibility</span></em><span> like so:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n23" cid="n23" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-rawblock-container md-math-container" tabindex="-1"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="19.711ex" height="4.855ex" role="img" focusable="false" viewBox="0 -1460 8712.3 2146" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.552ex;"><defs><path id="MJX-5-TEX-I-1D719" d="M409 688Q413 694 421 694H429H442Q448 688 448 686Q448 679 418 563Q411 535 404 504T392 458L388 442Q388 441 397 441T429 435T477 418Q521 397 550 357T579 260T548 151T471 65T374 11T279 -10H275L251 -105Q245 -128 238 -160Q230 -192 227 -198T215 -205H209Q189 -205 189 -198Q189 -193 211 -103L234 -11Q234 -10 226 -10Q221 -10 206 -8T161 6T107 36T62 89T43 171Q43 231 76 284T157 370T254 422T342 441Q347 441 348 445L378 567Q409 686 409 688ZM122 150Q122 116 134 91T167 53T203 35T237 27H244L337 404Q333 404 326 403T297 395T255 379T211 350T170 304Q152 276 137 237Q122 191 122 150ZM500 282Q500 320 484 347T444 385T405 400T381 404H378L332 217L284 29Q284 27 285 27Q293 27 317 33T357 47Q400 66 431 100T475 170T494 234T500 282Z"></path><path id="MJX-5-TEX-S4-2013" d="M0 248V285H499V248H0Z"></path><path id="MJX-5-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-5-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-5-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-5-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-5-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-5-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-5-TEX-N-2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D719" xlink:href="#MJX-5-TEX-I-1D719"></use></g><g data-mml-node="mo" transform="translate(0,626)"><svg width="596" height="237" x="0" y="148" viewBox="149 148 596 237"><use data-c="2013" xlink:href="#MJX-5-TEX-S4-2013" transform="scale(1.788,1)"></use></svg></g></g><g data-mml-node="TeXAtom" transform="translate(629,-240.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-5-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(1248.7,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-5-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-5-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-5-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1302.7,0)"><use data-c="1D44E" xlink:href="#MJX-5-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1831.7,0)"><use data-c="29" xlink:href="#MJX-5-TEX-N-29"></use></g></g><g data-mml-node="mo" transform="translate(3747.2,0)"><use data-c="2265" xlink:href="#MJX-5-TEX-N-2265"></use></g><g data-mml-node="mfrac" transform="translate(4802.9,0)"><g data-mml-node="mrow" transform="translate(220,710)"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D719" xlink:href="#MJX-5-TEX-I-1D719"></use></g><g data-mml-node="TeXAtom" transform="translate(629,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-5-TEX-I-1D70B"></use></g></g></g><g data-mml-node="mrow" transform="translate(1248.7,0)"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-5-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D460" xlink:href="#MJX-5-TEX-I-1D460"></use></g><g data-mml-node="mo" transform="translate(858,0)"><use data-c="2C" xlink:href="#MJX-5-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(1302.7,0)"><use data-c="1D44E" xlink:href="#MJX-5-TEX-I-1D44E"></use></g><g data-mml-node="mo" transform="translate(1831.7,0)"><use data-c="29" xlink:href="#MJX-5-TEX-N-29"></use></g></g></g><g data-mml-node="mn" transform="translate(1704.7,-686)"><use data-c="32" xlink:href="#MJX-5-TEX-N-32"></use></g><rect width="3669.4" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mover><mi>ϕ</mi><mo accent="true">―</mo></mover><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>≥</mo><mfrac><mrow><msub><mi>ϕ</mi><mrow data-mjx-texclass="ORD"><mi>π</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow></mrow><mn>2</mn></mfrac></math></mjx-assistive-mml></mjx-container></div></div><div style="text-align:center">[1, p.4]</div><p><span>As the mathematical proof is rather long, we will skip it. What matters is that if the </span><em><span>empirical reversibility</span></em><span> is small, the true </span><em><span>reversibility</span></em><span> is even smaller. Meaning everything with a small </span><em><span>empirical reversibility</span></em><span> should always be avoided. Makes sense, right? This does, of course, imply, that if the </span><em><span>empirical reversibility</span></em><span> is 1, the true </span><em><span>reversibility</span></em><span> could still be 0, which seems like somewhat of an oversight.</span></p><p><span>On the other hand, the actual method only relies on precedence, which, to me, requires no further proof via reversibility. Of course it makes sense to tie the paper to the initial claim of reversibility, but as mentioned, reversibility is difficult to define. This is why even semantically, moving to precedence makes sense. Therefore, analytically trying to return to the already ill defined concept of reversibility seems redundant, if not impossible.</span></p><p><span>Therefore: No more math, and on to the algorithms! 🐱‍🏍</span></p><h3 id='algorithms'><span>Algorithms</span></h3><p><span>Two methods of using reversibility are defined in the paper: </span><em><span>Reversibility-Aware Exploration</span></em><span> (RAE)  and </span><em><span>Reversibility-Aware Control</span></em><span> (RAC). As this paper is all about reversibility-awareness, we&#39;ll just call them exploration and control.</span></p><p><strong><span>Exploration</span></strong><span>, in general, means an agent is still actively learning about it&#39;s environment. Reversibility should therefore not be a limit, but instead a guide. This guide, as all things RL, is expressed as a reward. Meaning if an action seems highly irreversible, a slight penalty will be added to the returned reward.</span></p><p><strong><span>Control</span></strong><span> on the other hand aims at clearly limiting the agents actions. Here, any action that does not seem sufficiently reversible, gets rejected, and the agent has to sample from the remaining actions.</span></p><p><img src="https://lh6.googleusercontent.com/kJ7UZw0lUm7VlR70I8zT_qwMBmlyQY1tcvgpK9Zhct-2JEObMRN8M30qJsgRLixPK8qJHAfVkHicljHFj8750r_piMAt4iJQrembXk5zZM2QAHkOedCvblM8JH-8oTSfSdf_d9Ds2TQ03yp9L_aEMppgQg=s2048" alt="img" style="zoom: 67%;" /></p><div style="text-align:center">[1, p.6]</div><h4 id='reversibility-aware-exploration'><span>Reversibility-Aware Exploration</span></h4><p><span>As mentioned, RAE provides a penalty for irreversible actions. To decide if an action is irreversible, we set a threshold β∈[0, 1], and only apply a penalty if our reversibility is below this threshold. We get this reversibility value via a neural network. This network is trained on pairs of observations with a pre-defined maximum distance. These two observations are shuffled, embedded, and then trained on. Given enough samples, the neural network can confidently predict if the second observation could ever happen before the first. This is what we previously defined as </span><em><span>precedence</span></em><span>, or the temporal order probability. As this values is between 0 and 1, we can directly compare it with the threshold and penalize the reward accordingly.</span></p><p><img src="https://lh5.googleusercontent.com/X42_hAnXhKnT1bsqxubCP_bigxyCXWper6H4k1LWlvhWgF4uLbpTR48e2p8IbI2J_F7EP2__EafsULHWIs0IcpeR6CeY7V8iCmC2sBDMs4EqH247J2HLxQSTvSWanqz5z1GJZlaAFGc5GA1SUNsT5lI54w=s2048" alt="img" style="zoom: 50%;" /></p><div style="text-align:center">[1, p.5]</div><h4 id='reversibility-aware-control'><span>Reversibility-Aware Control</span></h4><p><span>RAC on the other hand aims to make predictions about actions before they happen. To do this, it trains a second neural network using the predicted temporal order probability as targets. Basically, it predicts using its own predictions as a target while changing to a different input. This new input is the original state </span><em><span>s</span></em><span> as well as the chosen action </span><em><span>a</span></em><span> (instead of the state </span><em><span>s</span></em><span> and </span><em><span>s&#39;</span></em><span> like in RAE). Given enough samples, the second neural network, or action network, can then predict if an action results in a reversible state. Should this probability be below a certain threshold, the action is rejected, and a new action must be sampled. RAC is trained on offline data of the environment to ensure safety during the online training.</span></p><p><img src="https://lh4.googleusercontent.com/_tAZ9O6R2ZWW4vawl84Ti2cpScWzVbHhGOgbSunHpJh4vEocA3zJuWBtsZpNA6yJm02O84b3UxOzwNg1YAnq5p-b8gAptqaz7io3Wt3vvb--6NMy2zugiLt7xZqSLHIAMQRrFP7pBWZsQHseun_nAd4Z2w=s2048" alt="img" style="zoom: 45%;" /></p><div style="text-align:center">[1, p.21]</div><h2 id='implementation'><span>Implementation</span></h2><p><span>RAE should, in theory, provide a safer, and, if the environment benefits from avoiding irreversible states, more efficient exploration of the environment. This is first tested by disabling the rewards in the Cartpole environment (see </span><strong><span>Reward-Free Reinforcement Learning</span></strong><span>) to show that a policy avoiding irreversible states can still be learned with just the feedback from RAE. </span></p><p><span>Further, REA is deployed on two different environments with the rewards enabled (see </span><strong><span>Reversible Policies</span></strong><span> and </span><strong><span>Sokoban</span></strong><span>) to show that the exploration of the environment becomes safer and more efficient.</span></p><p><span>Finally, RAC is used to create completely </span><strong><span>Safe Policies</span></strong><span> using offline data gathered via random exploration.</span></p><p><span>I have tested some of the algorithms, with my results added below when available. All my implementations are based on the author&#39;s GitHub [2].</span></p><h4 id='reward-free-reinforcement-learning'><span>Reward-Free Reinforcement Learning</span></h4><p><span>For the initial test is on the Cartpole environment, the reward was removed, and feedback for the PPO agent was only provided via penalties based on RAE predictions. These are the papers results:</span></p><p><img src="https://lh3.googleusercontent.com/KBRbkUeEQJfPOaXt8bKjutC4Z_jy9IQFz-FCeH2x2Fg0oLtGa0DQ74iGCmpYeV-Odv_Wt199aCxmXzRZhKILTIe4_3c7AQqlBK51ph_UvAq6rwly3Qrp_FRT0nicwbl4jSSciLf3jBlmGBRSRUy5D3aOuw=s2048" alt="img" style="zoom:40%;" /></p><div style="text-align:center">[1, p.7]</div><p><span>Most relevant here is the left plot, showing the agents performance (blue) and the feedback provided by RAE (red). As RAE needs to first learn which states are irreversible, it initially provides no sensible feedback. Once the feedback becomes less random, the agent improves rapidly, until the Cartpole environment is solved. They further show RAE predictions based on pole coordinates and during two trajectories, with red indicating irreversibility and blue indicating reversibility. These results are pretty much what we would expect, with an upright position being fairly safe, while tilted positions are assumed more irreversible.</span></p><p><span>Here are my results:</span></p><p><img src="https://lh5.googleusercontent.com/5F9MgQMMPeTJ3RyVgGSOBRrvDrKCTlloabmmiwpImy3mtecRbxNspuUob_0gJSACvvEb-_wNnSxy1TJnXbswkXXsiAJ3w0c7dlz6gzg2COSiFDYo5usFN9OX62TdwiN79gvB2TQk2JwVjKkHMDgTYRktqA=s2048" alt="img" style="zoom:45%;" /></p><p><span>And a little more readable when plotted over Epochs:</span></p><p><img src="https://lh3.googleusercontent.com/IUhfqfCs0dQDAnZScDFAiaUN8jfAzNp0rKoyxaRKvtXRCunqwrh6FQ05M5buJoXRRs5NJFIdrC19L5SSk-QyMKuMpRDgtmlftz1abPLXOuczjK-yT5A-xasSFjEl7kqFsvaIDaI_cbUHScem7VE0fYOXgQ=s2048" alt="img" style="zoom: 45%;" /></p><p><span>Nothing to add, really. Mine doesn&#39;t look as smooth, and I think the label &quot;Reward-Free&quot; is a little misleading, but the algorithm works as expected. Moving on.</span></p><h4 id='reversible-policies'><span>Reversible Policies</span></h4><p><span>Now this is an odd one. First, the environment [1]: </span></p><p><img src="https://lh3.googleusercontent.com/ADwIZrgfBQ2pbWnoHTTuJf7cnC22vyAD2uDlvXBpaJ5JGcuJVpUaMiKv1NLf_DnT7H-Rr1E12__g82X0Go6BrxH-EepcV9p_m4i_EXbMY1F6uev2YoE2RlWIqn1RnBIRDkE4PF-u6I9I7HxUjI2fZYpuLg=s2048" alt="img" style="zoom:86%;" /></p><p><span>This is the Turf environment, as proposed by the authors. The agent (blue) must reach the goal (red). If it leaves the path (grey) and steps on the grass (green), the grass will turn to dirt (brown). This is not punished, but it is irreversible. Using RAE, the agent should therefore learn to avoid the grass and stay on the path, automatically creating a reversible policy. Here are their results (blue indicates a higher visiting rate) [1, p.8]:</span></p><p><img src="https://lh3.googleusercontent.com/uSDnnlT_8DLayo5Ddb7Z52iHDqo_sCzHVvmp47f4JZrWHyv1WMAA3fA2CyY-Os7Zg3nmhS0hSJM2ZGfRgBA8QQN8-SRvt5nHjAstMazdeOVRd7tQK4L7snj8pOVboo9xdnpHtb9Av8MvgnlPmCl1nm80mQ=s2048" alt="img" style="zoom: 50%;" /></p><p><span>Avoidance of the grass does indeed happen, but as can already be seen in their results, it also happens without RAE. Here are my results (yellow indicates a higher visiting rate):</span></p><p><span>																						</span><span> </span><img src="https://lh3.googleusercontent.com/JyizH5gpE5y86rRqdWW7F4jG7YiTsQSmQDLxuRqQ1e4B99ObSqzuJNlomX1zYEJDVEt_D-42__4C1MjMHmTXKlN_oT8Y2oEcJFSNycHItLL9_1Ue7gBSgqMozlHVTtfB8M9lCND7IZ6imPOe93y_7L_yrA=s2048" alt="img" style="zoom:25%;" /><img src="https://lh4.googleusercontent.com/s0_RAGWzBZBc6m623G_o7--PlSj3FVFIM1m8W7h7YM5GugsQIikHTaEbnnLklNbgw2q_0AAbP5wO6D-OB77IRKfM04ek9z71c-VSU1jTauR-DE_s1FcCfEEseBUmXEVnaJly6Eqn-TWV1VIkSCzi4djPKA=s2048" alt="img" style="zoom:25%;" /></p><p><span>See the difference? Me neither. (PPO is left, PPO+RAE is on the right). To ensure I am not just bad at seeing colors, here is the spoiled grass by both algorithms over time:</span></p><p><img src="https://lh4.googleusercontent.com/KuROuyA-feUhlmAf_mDpn-cLDWtneisTyfz6hAKm-GQCI6QMVIMDACS8aQ3yC5SYJqL0RIvS1hKN6bsVYe018lew221e9-OOL4vQWHr6QVRdQp9LosdaqLpYW8mh6uX6MdyIi3kfjL8PC5T6bZC8_36-QQ=s2048" alt="img" style="zoom:45%;" /></p><p><span>Again, no real difference. My guess is PPO already avoids the grass on its own. As diagonal movements are not possible, any trajectory containing only the moves </span><em><span>up</span></em><span> and </span><em><span>right</span></em><span> will be optimal. Therefore, sticking to the path probably helps finding the way, which is why PPO learns this behavior, even without RAE. </span></p><h4 id='sokoban'><span>Sokoban</span></h4><p><span>Sokoban (image on the left) then is a lot more interesting. The environments aim is for the agent (green alien) to push the orange boxes on the positions marked in red. Pushing any box up to a wall can make solving the environment impossible, but does not result in a fail state. Agents can therefore collect a lot of useless data, making training extremely inefficient.</span></p><p><img src="https://lh4.googleusercontent.com/vAmTo0KZ0LtXjM9X5unCZ8B6lGwkS8GOub8HUXC1FmIOnKzMJr4GN2XMArKtEhHEMRtvKn6dzP1Ptzdsn-HcZNSrK2_ashmTgEOWiVGImHPIRoSGIxu0Tjwq0SM3Ca7wSjE0nsF6fJJFscv_3i8wLTHHFg=s2048" alt="img" style="zoom: 40%;" /></p><div style="text-align:center">[1, p.8]</div><p><span>As they show, adding RAE makes training more effective, with the algorithm being able to solve the environment much more consistently then a pure IMPALA implementation. The plot on the right shows the frequency of irreversible states, showing that RAE is able to learn reversibility sufficiently, even though it is an overall very sparse event.</span></p><p><span>Due to the training taking about a week on my hardware, I could not confirm their results and can&#39;t really add anything. I&#39;m surprised that, even though the environment seems so complicated, irreversible states are so rare. Maybe the initial levels are comparably easy.</span></p><h4 id='safe-control'><span>Safe Control</span></h4><h5 id='cartpole'><span>Cartpole+:</span></h5><p><span>For safe control, they first tested on a cartpole environment with a maximum step size of 100.000 (meaning the episode can be 500x longer than normal cartpole).  A random policy initially collects offline data (3 Million pairs to be exact), RAC trains on this data, then a random policy is deployed, with RAC removing irreversible actions.</span></p><p><img src="https://lh3.googleusercontent.com/iZmIt7d0Ke24e-N6pFf7rhTPTTyuwqZFIfdsIP1XChzAz7juhwxT02o1OiEP41SOYPJrFbCMS4RELypKQt3HQbCA0IWcn-OyqNmHr9SFRjb6riLrTD5fr7sjg8ZORoAAtEyEOPjC4lYWFyOvIzjxvhAP4Q=s2048" alt="img" style="zoom:40%;" /></p><div style="text-align:center">[1, p.9]</div><p><span>Their results show that this works, but performance seems highly dependent on the choice of the threshold for reversibility (plot on the left). To find the correct threshold they suggest selecting 0.5 and inclemently reducing it. This could be problematic, but also isn&#39;t (I&#39;ll get to that in a second). For now, here are my results:</span></p><p><img src="https://lh6.googleusercontent.com/R0nt8_nlWf3LdcMnlAYbv4CFU9NTkgc-Hu_1yBI6MpyrEHfZzrZotKkYYyrXGHtES5gRANz45CaIY3Cw0m53IrwbIZ61BLDhLdv76Y0obud3SiujCpfp4CdQgNkgvtqP-8hWcetmKIXK2_ScqyQdgvENCA=s2048" alt="img" style="zoom: 45%;" /></p><p><span>Yes, they are reversed. I&#39;m assuming they implemented it with rejecting actions above the threshold for some reason, while both paper and their code reject actions below the threshold. Beyond that, results are similar, although I stopped my environment at 10.000 steps due to the long time the tests would otherwise take. Now before we get back to why all threshold should have similar results, I want to emphasize something: RAC does not automatically turn randomness into a good policy. Cartpole only has two actions, therefore removing an irreversible action always only leaves the </span><em><span>optimal action</span></em><span>. If the environment had 10 available actions, of which RAC removes, say, 3, behavior would still be random within these 7 actions. </span></p><p><span>Okay, so what about the threshold? The RAC model is the same in all tests, so why does changing the threshold make the performance worse? So again, this is something very unique to Cartpole, as it only has two actions. Any higher action space would definitely have to consider the threshold very carefully. The issue in Cartpole only arises when both actions cannot clear the threshold. A logical behavior would then be:</span></p><p><span>			</span><span>A: Choose the action with the highest reversibility value.</span></p><p><span>			</span><span>B: Implement a dynamical threshold.</span></p><p><span>			</span><span>C: Do nothing.</span></p><p><span>Here is how A performs:</span></p><p><img src="https://lh4.googleusercontent.com/p1trKT8ZqAwO78oiS2HTUXpUEHzCx4XwkgkpPxY9luzsCHeK0WnSeZCf3mYbYPO6fHKC97zLE_zqBBAQIgpjXuqtX9H6XJpdrITjawISqgQxuBud56FiVmngKICvqLrGycR0zlYRdvcglh_HTw5u-dYs9w=s2048" alt="img" style="zoom:45%;" /></p><p><span>Granted, this theoretically turns the RAC into a action predictor, which according to the initial math section is not within the scope of it&#39;s design. What I am only trying to point out is that the possibility for no action to clear the set threshold always exists, and is not addressed by the authors.</span></p><h5 id='turf'><span>Turf:</span></h5><p><span>Finally: Turf again, this time with RAC. Training is again done using offline data created via a random policy. They show that using RAC, the PPO agent trains slightly slower (initially it never reaches the goal), but never ends up stepping on grass.</span></p><p><img src="https://lh6.googleusercontent.com/Gl_3-37YQcBz3LHBhxDTVzozHAWzclIhkyk-hBkgPWoIdKUr6jlQKglOpTfpLSYjSiGLGwmjFssPZWTSnloDFBdWUIuKIODj-Srskm6GRCC-8V9zudYExSg_PCWIiM6VYmpaSUrvHMWzPDQP1KJnUyT_8Q=s2048" alt="img" style="zoom:50%;" /></p><div style="text-align:center">[1, p.9]</div><p><span>Here are my results, using the values they provided (β=0.2):</span></p><p><img src="https://lh4.googleusercontent.com/Th54YunJTaMh6FpqBVHW4baDsh0iKBENF27rRcdaSgGn-PrfwevUs-fjTfXew4I3cjj8ROl1n7DcwmDAKMl0ZMe_C5sAFqbLpHspGkb2BrKDJ8EJJCF_2yjz0oImJbr5wOFAQXutAxLo3x83NoZojRLDCw=s2048" alt="img" style="zoom: 25%;" /></p><p><span>Wait, I&#39;ll explain. So, the agent assumes everything is irreversible except when it is super, super reversible. Like standing still. Of course the agent can&#39;t stand still, so instead it moves either down or to the left. Basically, when being told to move, to stay safe it decides to consistently move against a wall. I think this is what they were really trying to show in the Cartpole+ example. The threshold really matters. As mentioned earlier, their implementation of the threshold seems to be aiming for above the threshold, not below like in their GitHub. Here it is again with β=0.8:</span></p><p><img src="https://lh6.googleusercontent.com/7nAsRNoJDe9DWZxxm-sHqHWNbPOcZleUMhT8qma_g9SIQJWJxHFfi734QA4ptvPSPx1Bo4BSvt7z87F7E2-b6_0eYE_Ofdzf67DWsdOl9fx9rEIDo1y_jYFBBuMjLXDCRe507Yjx-QvCeNnRBsfEUCuVuA=s2048" alt="img" style="zoom:25%;" /></p><p><span>Look, sue me. I have no idea what this agent is doing. Obviously not following the path. I tested this repeatedly, with varying results, but nothing similar to theirs. My guess is some relevant hyperparameters are wholly different from their implementation. I am sure their results are not made up, but this seems to really require a lot of fine-tuning (and maybe even the correct seed) to get right.</span></p><h2 id='tests'><span>Tests</span></h2><p><span>During my reading of the paper as well as of the notes provided by reviewers, three potential problems showed up:</span></p><ol start='' ><li><p><span>The algorithm could be used to enforce irreversibility.</span></p></li><li><p><span>Predicting on state transitions leads to high computational time for larger state spaces.</span></p></li><li><p><span>Stochastic environments could be difficult for reversibility-prediction.</span></p></li></ol><p><span>I have tested all three problems, and summarized my findings below.</span></p><h4 id='harmful-irreversibility'><span>Harmful Irreversibility</span></h4><p><span>Using reversibility to enforce irreversible actions and cause harm seems to be simple enough, although the authors provide a somewhat handwavy explanation as to why this is not an issue. [1, p.10] In short: </span><em><span>Yes, it can be used to take irreversible actions, but it can also be used to prevent that.</span></em><span> (I&#39;m paraphrasing.) This, obviously, is not a solid explanation, as it assumes that people without harmful intend have the final say about what the code does. Not only is this pretty much impossible to enforce (the paper is public after all), it also ignores the very real ability and creativity of people trying to hack systems to behave outside their intended purpose.</span></p><p><span>A very simple example would be as follows. Here is the original code they use during </span><em><span>Safe Control</span></em><span> on Cartpole+:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">irrev_idx</span> <span class="cm-operator">=</span> <span class="cm-variable">rev_score</span>[:, <span class="cm-variable">actions</span>].<span class="cm-property">squeeze</span>(<span class="cm-number">1</span>) <span class="cm-operator">&gt;</span> <span class="cm-variable">threshold</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> <span class="cm-variable">irrev_idx</span>.<span class="cm-property">sum</span>() <span class="cm-operator">&gt;</span> <span class="cm-number">0</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">actions</span>[<span class="cm-variable">irrev_idx</span>.<span class="cm-property">cpu</span>().<span class="cm-property">numpy</span>()] <span class="cm-operator">=</span> <span class="cm-variable">torch</span>.<span class="cm-property">argmin</span>(<span class="cm-variable">rev_score</span>[<span class="cm-variable">irrev_idx</span>], <span class="cm-variable">axis</span><span class="cm-operator">=</span><span class="cm-number">1</span>).<span class="cm-property">cpu</span>().<span class="cm-property">numpy</span>()</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 63px;"></div><div class="CodeMirror-gutters" style="display: none; height: 63px;"></div></div></div></pre><p><span>Here is my adjusted code:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">irrev_idx</span> <span class="cm-operator">=</span> <span class="cm-variable">rev_score</span>[:, <span class="cm-variable">actions</span>].<span class="cm-property">squeeze</span>(<span class="cm-number">1</span>) <span class="cm-operator">&lt;</span> <span class="cm-variable">threshold</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> <span class="cm-variable">irrev_idx</span>.<span class="cm-property">sum</span>() <span class="cm-operator">&gt;</span> <span class="cm-number">0</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">actions</span>[<span class="cm-variable">irrev_idx</span>.<span class="cm-property">cpu</span>().<span class="cm-property">numpy</span>()] <span class="cm-operator">=</span> <span class="cm-variable">torch</span>.<span class="cm-property">argmax</span>(<span class="cm-variable">rev_score</span>[<span class="cm-variable">irrev_idx</span>], <span class="cm-variable">axis</span><span class="cm-operator">=</span><span class="cm-number">1</span>).<span class="cm-property">cpu</span>().<span class="cm-property">numpy</span>()</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 63px;"></div><div class="CodeMirror-gutters" style="display: none; height: 63px;"></div></div></div></pre><p><span>The only changes are:</span></p><ul><li><p><span>reversed relation operator at the end of the first line</span></p></li><li><p><span>argmax in the middle of the final line</span></p></li></ul><p><span>Here is the new performance, using the same trained RAC network:</span></p><p><img src="https://lh4.googleusercontent.com/RxLZRQ0AujWxsu4EyMgMx6zJ3lg2a609I_5Q4poj5tP7j6ZEr5R7LZy1VYFyZ3tA3Hq6HHNwXKX6bp78lfIqi5AHZxhwiImgOrCleDvPxJWpVy_LwtFAPXCcZ6XSgQ2HaPozEol5g-OR6qM72UE1p70PqA=s2048" alt="img" style="zoom:45%;" /></p><p><span>Not very nefarious, but clearly proves a point. With these changes, the agent will only chose actions with a reversibility score below the threshold, which, if trained properly and using the correct threshold, are always irreversible (at least if any irreversible actions are available).</span></p><h4 id='computational-time'><span>Computational Time</span></h4><p><span>Another relevant worry, as raised by one of the reviewers, is the computational time. As the implementation aims to predict reversibility from one state to another, and for </span><em><span>n</span></em><span> states exist </span><em><span>n</span></em><span>² different state-transitions, the computational time is </span><em><span>O</span></em><span>(n²).  To test this, I set up a Turf world four times as large as their implementation (20x20).</span></p><p><img src="https://lh4.googleusercontent.com/7XkSeeb9PQKnpoNWu6ATeBP-ad9tvkNif9zv7PVBYUxW-48kFq6NrxggF4hjs6QhfYVXnGBQBc-nWJgAp3myYZt7iFG6k-CPggrJKESKFN8vjJyeuqGkP7OZGt80tidVw9adpgPc_GPn_X3raAR11PYHZA=s2048" alt="img" style="zoom:25%;" /></p><p><span>I then ran a PPO agent with RAE on both, here are the results:</span></p><p><img src="https://lh4.googleusercontent.com/P-fXZnwruP-iW0iG9vkkS_kluaNnoaLHK3q8A4l8wrCtvH9CP9pU28pFScxqnl7h59faZJZTMemp-JLNd5mvdqW_NFx9ztgEd8zM0Eb2dGfiapIOsC8ihRdLM0d0LBYI8IU3wkCNDtBdfjcKWyPKWtTljA=s2048" alt="img" style="zoom:45%;" /></p><p><span>Okay, so on the larger world it performs worse, maybe not too surprising? Well, I did increase the maximum step count for the large world. Meaning even though both trained for the same amount of epochs, the larger world had at most likely ~4 times as much training time. Assuming linearity, performance should be roughly the same, especially considering the performance on the small world wasn&#39;t really increased by RAE. To make sure, I compared the performance of a pure PPO agent vs. a PPO+RAE agent on the large Turf world:</span></p><p><img src="https://lh5.googleusercontent.com/v53-4dUiwtJerlwYTeMZL82_99wWX57R3oXiiZ26lbcM88PUkl-AklTeGcH8ev5nAHYUQ_nxmuFP3bS-G6J3-J-2Us3S0B4giOKBpNP5zJAa0f0g1K0g58ufpe4AFl6Sl654DzFzwfhNev1j6W9TupCWmA=s2048" alt="img" style="zoom:45%;" /></p><p><span>Turns out RAE actually makes the agents performance substantially worse at avoiding grass? This confused me so much I checked the whole code again and reran the test. Same result:</span></p><p><img src="https://lh4.googleusercontent.com/wMPsnWiLzXYgvw0G9q0kJBvKQlLlzbnStwLuJoTQRmSDi8N-zy_MJbtTNuw4pp4NQt4JGyNAHS1ee5OayNuip3pN0IJ3mlZNCcc3oUKFvSvjr2tIv3ateiUrPXU3nl0-wWToHqLQzwTRsdo9A22pTe36LA=s2048" alt="img" style="zoom:45%;" /></p><p><span>Interestingly though, both processes show the same significant drop in spoiled grass at some point in time. I am assuming that this drop happens, when the RAE neural network finally learns to make reasonable predictions for reversibility. With penalties before the drop therefore being somewhat random, the agent most likely doesn&#39;t create an efficient policy and ends up taking longer to reach the goal. It thereby will probably step on more grass along the way, and when compared to pure PPO starts underperforming. This doesn&#39;t sufficiently proof computational time issues, but does show, that the overhead of training the reversibility prediction may actually lead to keeping sup-optimal, irreversible behaviors for longer.</span></p><h4 id='non-deterministic-actions'><span>Non-Deterministic Actions</span></h4><p><span>Finally, this was a rewarding one. For me, anyway. Not so much for the PPO agent, but we&#39;ll get to that. So, the environment here is FrozenLake [3]. The agent (small person with the green hat) starts at the small stool (top left), and has to reach the present (bottom right) to receive a reward of 1. Should the agent step into one of the holes, the environment ends and a reward of 0 is returned. Now to make this a stochastic environment: Every time the agent choses to move towards any direction, there is a 1/3 chance arrives as intended, and a 1/3 chance it ends up moving left or right respectively. </span></p><p><img src="https://lh5.googleusercontent.com/Cwr_9FkYOb4s1KOzhjcuzrF8aOo5c6PeRNUXfSIi678JNTDGyEQ9Ee7touNx2nYEdCeJYcl-QqOYNhAhUgPwYWYVNiaer82Ou7NbN0k4huM-dtYhVPdRhUH8WkdnIbqiTIRkuVny28gOUDB1Jxi9U8_qbQ=s2048" referrerpolicy="no-referrer" alt="img"></p><div style="text-align:center">[3]</div><p><span>First I ran a pure PPO agent on the FrozenLake, using the same parameters as during the Turf world RAE training. I then plotted plotted the visiting rate, same as during the Turf experiment:</span></p><p><img src="https://lh4.googleusercontent.com/lzvnp-1mwknr6r9xiAKSTLYRoCwqp7ZP6ky0Crvgpkdoq9s9xwYTiLPgQXgDlCqOf1A70rDZUX2jdfR7PacnMKLB08aOYxPeOq32sH3I1jffy64bX8BjB66kigkd7wSwurll1WofNIOY7LGKFLUKtmS0cQ=s2048" alt="img" style="zoom: 35%;" /></p><p><span>Remember when I said not very rewarding for PPO? Well, pure PPO to be exact. As mentioned, there is no reward at all unless the goal is reached. During random exploration, the chances of reaching the goal are extremely low, making the rewards very sparse. Subsequently, the agent cannot figure out how to reach the goal. In comparison, here is the performance of the agent trained using PPO+RAE:</span></p><p><img src="https://lh6.googleusercontent.com/9WENC3-vTv1MFSV79MlckApc4gZmGu2RWXgZy6Ha290zWdVMtpfk19J7dsPhApf0C5pH6u5T2X0Ff4GG2JMQ1Xowa1_v4X_tQon_r_aUey0JDCcqdAA-sQbhkEI9nXaB58L22hw5rOvR69T1yYncy3lhIA=s2048" alt="img" style="zoom:35%;" /></p><p><span>The agent not only frequently reaches the goal, it also clearly avoids all holes, except the upper right one. So why does this work so well? In essence, by providing feedback regarding the irreversibility of stepping into a hole, the rewards become non-sparse. This allows the agent to learn to avoid the holes, thereby increasing the chances of eventually reaching the goal. Using the suddenly much higher reward, the agent quickly adjusts to always follow its already pretty optimal policy. Here is the reward over time to prove I did not make that up:</span></p><p><img src="https://lh4.googleusercontent.com/TQFBpDShOK7Cm9Xy9NOISqant27GD7pE2boaqqxyr9pjBjAN1AZF4S4JM7yc0zhtjMaWM_UDBYBqql5VQVUywAppD6kLaVhRHP-fTFdueiErJiWBkMtq7SEwEpEx7A4L0R6ppaGK62jd0OUX4eMTbdzQ8w=s2048" alt="img" style="zoom:45%;" /></p><p><span>Note that both agents trained for the same amount of steps, with the PPO+RAE agent staying within the environment much longer. Like, </span><em><span>much longer</span></em><span>. What&#39;s going on there? This comes down to what an optimal policy in this environment looks like. Since walking into the edge means the agent stays in place, it can actually ensure it ends up where it wants to go by repeating one direction over and over until it succeeds. For example, until the agent reaches the field above the left-most hole, it should only walk to the left until eventually moving down twice, or moving down, up, down,... , up, down, down. You get the point. And this is something the agent was clearly only able to find out using the input of the RAE network. Short side-note before we move on to the conclusion: Of course the goal is also irreversible and is therefore punished by RAE. It is therefore detrimental, that the final reward is much bigger than the irreversibility penalty to ensure that the agent doesn&#39;t just turn around and keep moving. Obviously, this is only an issue in a finite environment like the ones presented and not necessarily in a real-world application.</span></p><h2 id='conclusion'><span>Conclusion</span></h2><p><span>You made it! Thanks for reading. I&#39;ll try to keep the conclusion short, I promise. Here are some of the Pro&#39;s:</span></p><ul><li><p><span>Smart solution to a complex problem</span></p></li><li><p><span>Unique and very simple but flexible approach</span></p></li><li><p><span>Easy to implement and adjust</span></p></li></ul><p><span>And the Con&#39;s:</span></p><ul><li><p><span>Very hyperparameter-dependent</span></p></li><li><p><span>Struggles with larger state-spaces</span></p></li><li><p><span>Can be misused</span></p></li></ul><p><span>I elaborated the Con&#39;s within my tests so I&#39;ll skip that here. Regarding the Pro&#39;s, take a look at their GitHub. There is more overhead, but the actual reversibility part consists of 3 files with ~450 lines of code. That&#39;s ridiculously little, while it still works great and can easily be adjusted for other environments. And looking at the original idea, this tiny implementation makes a lot of sense, as the idea itself is already extremely simple, which, to me, is its greatest strength. A lot of research dealing with any sort of intelligence or learning tend to take the &quot;larger = better&quot; approach, so seeing research done on a simple/small solution approach for a complex problem is very refreshing. </span></p><p><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*zwsADFo2LkhKtwMzOSzzYQ.jpeg" alt="img" style="zoom: 67%;" /></p><div style="text-align:center">[4]</div><p><span>That being said, the authors still do not manage to fully rid themselves of this issue, as all predictions within this paper are learned via neural networks. These are of course extremely tiny (two layers each), but are therefore also limited to the extremely simple environments all mentioned tests were performed on. By implementing their simple idea like this, the only way forward becomes scaling up the neural networks, thereby quickly losing all trace of its original simplicity as well as its clever approach in another arms-race for the biggest functional function-approximator. Granted, temporal order may be impossible to learn any other way, but that just raises another question: </span><em><span>Do we learn temporal order or do we actually learn something about reversibility?</span></em></p><p><span>I could imagine human perception being able to create a representation of a present state reduced to only the problem-relevant aspects, do the same for a potential future state, and have both representations just complex enough to be able to derive reversibility not via prediction, but simply via the difference between both representations. Reality will be a lot more complex of course, but if all approaches come down to &quot;solved via function approximator&quot;, I highly doubt any of these algorithms will ever see similar results in a real world environment. I am not super optimistic, but I do hope more papers will eventually pick up this &quot;simple = better&quot; approach, and create much more robust algorithms capable of tackling tasks not as a computer, but as a human or other animal might. And who knows, maybe reversibility will be a key aspect?</span></p><h2 id='references'><span>References</span></h2><p><span>[1] Nathan Grinsztajn and Johan Ferret and Olivier Pietquin and Philippe Preux and Matthieu Geist, “There Is No Turning Back: A Self-Supervised Approach for Reversibility-Aware Reinforcement Learning”, </span><em><span>NeurIPS 2021.</span></em></p><p><span>[2] Nathan Grinsztajn. NoTurningBack [Website]. 2021. Available at: </span><a href='https://github.com/' target='_blank' class='url'>https://github.com/</a><span> </span><a href='https://github.com/nathangrinsztajn/NoTurningBack' target='_blank' class='url'>https://github.com/nathangrinsztajn/NoTurningBack</a></p><p><span>[3] OpenAI. Frozen Lake[Website]. 2022. Available at: </span><a href='https://www.gymlibrary.dev/environments/toy_text/frozen_lake/' target='_blank' class='url'>https://www.gymlibrary.dev/environments/toy_text/frozen_lake/</a></p><h2 id='images'><span>Images</span></h2><p><span>[4] </span><a href='https://towardsdatascience.com/deep-learning-a-monty-hall-strategy-or-a-gentle-introduction-to-deep-q-learning-and-openai-gym-d66918ac5b26' target='_blank' class='url'>https://towardsdatascience.com/deep-learning-a-monty-hall-strategy-or-a-gentle-introduction-to-deep-q-learning-and-openai-gym-d66918ac5b26</a></p></div></div>
+</body>
+</html>
